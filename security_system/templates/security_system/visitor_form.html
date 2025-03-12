@@ -1,0 +1,25 @@
+<!-- security_system/templates/security_system/visitor_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Form</title>
+</head>
+<body>
+    <h2>{{ visitor.name|default:"Add Visitor" }}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ visitor.name|default:'' }}" required><br>
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" value="{{ visitor.phone|default:'' }}" required><br>
+
+        <label for="purpose">Purpose:</label>
+        <input type="text" id="purpose" name="purpose" value="{{ visitor.purpose|default:'' }}" required><br>
+
+        <button type="submit">Save Visitor</button>
+    </form>
+</body>
+</html>

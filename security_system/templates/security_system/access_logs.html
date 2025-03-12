@@ -1,0 +1,17 @@
+<!-- security_system/templates/security_system/access_logs.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Logs</title>
+</head>
+<body>
+    <h2>Access Logs</h2>
+    <ul>
+        {% for log in logs %}
+            <li>{{ log.user.username }} - {{ log.area_accessed }} - {{ log.created_at }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

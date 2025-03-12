@@ -1,0 +1,17 @@
+<!-- security_system/templates/security_system/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>Welcome to the Dashboard</h2>
+    <p>You are logged in as: {{ user.username }}</p>
+    <a href="{% url 'visitor_list' %}">Manage Visitors</a><br>
+    <a href="{% url 'incident_list' %}">Manage Incidents</a><br>
+    <a href="{% url 'access_logs' %}">View Access Logs</a><br>
+    <a href="{% url 'logout' %}">Logout</a>
+</body>
+</html>
